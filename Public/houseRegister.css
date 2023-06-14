@@ -1,36 +1,29 @@
+.housebg{
+  z-index: -9999;
+  width: 100%;
+  height: 100%;
+}
+.housebg img{
+  position: absolute;
+  z-index: -999;
+  margin-top: 4%;
+  width: 70%;
+  height: 91.9%;
+}
 
-#home {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #4caf50;
-    border-radius: 50%;
-    color: white;
-  }
-  
-  #home:hover {
-    background-color: #45a049;
-  }
-  
-  #home i {
-    font-size: 20px;
-  }
-  
   #House-register {
     position: absolute;
         width: 26.7%;
         z-index: 1;
         height:85%;
         margin: 0% 70%;
-        margin-top: 1.8%;
+        margin-top: 4.2%;
         padding-left: 20px;
         padding-right: 30px;
-        background-color:#ffffffbd;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color:#ffe9e9bd;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
         padding-top: 3%;
+
   
     /* height: 100%;
     margin-top: 3px;
@@ -53,6 +46,8 @@
   #Form input[type="rent"],
   #Form input[type="file"] {
     width: 100%;
+  box-shadow: 1px 1px 1px 1px #212529;
+
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;

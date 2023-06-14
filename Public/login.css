@@ -25,7 +25,8 @@ navbar {
   position: absolute;
   width: 100%;
   height: 62px;
-  background-color: #ebebeb73;
+  background: linear-gradient(45deg, #117b8eae, #e5e5e5);
+  border-bottom :2px solid black;
 }
 
 navbar .navbar-nav {
@@ -170,3 +171,4 @@ a.nav-links.active {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(12, 1, 55);
 }
+

@@ -11,11 +11,7 @@ const querystring = require('querystring');
 const mongoose = require("mongoose");
 const multer=require("multer");
 require('dotenv').config();
-<<<<<<< HEAD
 const dburl = process.env.MONGODB_URI;
-=======
-const connectionString = process.env.MONGODB_URI;
->>>>>>> 501e2508ddcd61894648a7816bf25fbb09b05059
 
 
 const User=require('./Model/customer.js');

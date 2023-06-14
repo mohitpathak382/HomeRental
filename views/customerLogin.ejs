@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+    <link rel="shortcut icon" href="./images/old logo.svg">
+    <link rel="stylesheet" type="text/css" href="/login.css">
+</head>
+<body>
+   <navbar>
+      <nav class="navbar-nav">
+       <img src="../images/hrmlogo.svg" alt="ApnaGhar" class="hrmlogo" onclick="location.href='/' ">
+          <div class="nav-items">
+              <ul>
+                  <li><a class="nav-links" href="/">Home</a></li>
+                  <li><a class="nav-links active" href="#hero">Login</a></li>
+                  <li><a class="nav-links " href="/register">Register</a></li>
+              </ul>
+          </div>  
+      </nav>
+  </navbar>
+<div class ="bgImg">
+      <img src="/images/newbg.jpg" alt="">
+</div>
+   <div id="Login">
+
+    <span style="color:red;"><i><%= loginAgain %></i></span>
+    <div>
+      <span style="color:red;"><i><%= passwordIncorrect %></i></span>
+      <span style="color:rgb(0, 255, 26);" ><i><%= userNotRegistered %></i>
+      </span>
+    </div>
+
+      <form id="loginForm" action="/customerLogin" method="POST">
+        <label>Email </label><input type="email" name="userEmail"><br>
+        <label>Password </label><input type="password" name="userPassword"><br>
+        <input type="submit" name="login" value="LOGIN">
+      </form>
+      <div class="signUP">
+        Don't Have An Account ?
+        <a href='/register'">Sign Up</a>
+
+      </div>
+   </div>
+</body>
+</html>

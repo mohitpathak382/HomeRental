@@ -1,0 +1,290 @@
+/* Global styles */
+body {
+    background-color: white;
+    background-image: url("/images/Dark-color-wood-texture-background-vector-09.jpg");
+    margin: 0;
+    padding: 0;
+    background-repeat:round
+  }
+  
+  /* Header styles */
+  #header {
+    position: fixed;
+    top: 0%;
+    width: 100vw;
+    height: 10%;
+    background:rgba(103, 93, 28, 0.762);                                                                                      
+
+    border: 0.1vmin solid rgb(88, 88, 88);
+    overflow: hidden;
+  }
+  
+  #header img {
+    float: left;
+    width: fit-content;
+    height: 7.5vh;
+    cursor: pointer;
+    margin-top: 0.5%;
+    margin-left: 1vw;
+
+    position: fixed;
+}
+
+#header img:hover {
+    background: rgb(255, 255, 255);
+    width: fit-content;
+  }
+  
+  #header #username {
+    font-family: 'Krub', sans-serif;
+    position: absolute;
+    color: #ebdb00;
+    left: 65%;
+    top: 20%;
+    bottom: 20%;
+    text-transform: uppercase;
+    border: 2vmin lightgrey;
+    font-weight: bold;
+    font-size: 3vmin;
+    justify-content: center;
+  }
+  
+  #username p {
+    justify-content: center;
+  }
+  
+  #username p:hover {
+    color: rgb(0, 255, 213);
+  }
+  
+  #eachContainer {
+    position: static;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 20%;
+    margin-bottom: -10%;
+    width: 80%;
+    padding: 3.5vmin 2vmin 2vmin 3.5vmin;
+  }
+  
+  #fInfo {
+    float: right;
+    border: 4px solid rgb(0, 0, 0);
+    margin-top: -31vh;
+    margin-left: -10vw;
+    position: static;
+    padding-top: 1.5vmin;
+    padding-bottom: 1vmin;
+    padding-left: 4.5vmin;
+    padding-top: 1.5vmin;
+    width: 60%;
+    height: 30vmin;
+    background-color: rgb(154, 159, 207);
+    align-items: center;
+    margin-right: 13vw;
+    border-radius: 5%/16%;
+  }
+  
+  .address {
+    font-size: 20px;
+    font-style: italic;
+    text-transform: uppercase;
+    list-style: solid black;
+    color: #d04444;
+  }
+  
+  .address:hover {
+    cursor: pointer;
+    color: rgb(34, 16, 194);
+  }
+  
+  p {
+    font-family: 'Krub', sans-serif;
+    font-size: 2vmin;
+    font-weight: bold;
+  }
+  .rent,.desc,.bed,.facing,.cat,.oname{
+    color: rgb(108, 0, 25);
+    font-weight: bolder;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .imgContainer {
+    width: 33vmin;
+    height: 33vmin;
+  }
+  
+  .imgContainer img {
+    align-items: center;
+    position: static;
+    margin-left: 1.3vmin;
+    margin-right: 1.3vmin;
+    margin-top: 1.3vmin;
+    margin-bottom: 1.3vmin;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .catvalue,
+  .bedvalue,
+  .faceValue,.onamevalue{
+    text-transform: uppercase;
+    padding-right: 50px;
+    font-weight: bolder;
+    color: rgb(0, 0, 60);
+    font-size: 16px;
+  }
+  .onamevalue{
+    color: rgb(226, 233, 45);
+  }
+  
+  .fa {
+    font-size: 2.5vmin;
+  }
+  
+  .imgFit {
+    width: 29vmin;
+    height: 29vmin;
+  }
+  
+  .descvalue {
+    font-size: 2.1vmin;
+    font-family:sans-serif;
+    color:rgb(20, 85, 160)
+  }
+  
+  #Locname {
+    color: green;
+    font-weight: bold;
+    font-size: 3.2vmin;
+  }
+  
+  #Locname:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  #err {
+    font-weight: bold;
+    font-size: 5vmin;
+    color: lightgrey;
+    margin-top: 20vh;
+    text-align: center;
+  }
+  
+  #mno.num {
+    font-size: 15px;
+    color: green;
+  }
+  
+  #gIcon {
+    margin-left: 1vmin;
+  }
+  
+  #home {
+    position: absolute;
+    left: 90%;
+    top: 2.5%;
+    width: 5%;
+    height: 5%;
+    color: white;
+    font-size: 2.5vmin;
+    cursor: pointer;
+    border: 1px solid cyan;
+    justify-content: center;
+  }
+  
+  #homeTxt {
+    position: absolute;
+    top: 4%;
+    left: 15%;
+    font-size: 2.8vmin;
+    letter-spacing: 0.5vmin;
+    font-family: monospace;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+  }
+  
+  .homeIcon {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    color: rgb(255, 251, 0);
+  }
+  
+  .homeIcon {
+    display: none;
+  }
+  
+  #home:hover .homeIcon {
+    display: inline-block;
+  }
+  
+  #home:hover #homeTxt {
+    display: none;
+  }
+  
+  .rValue {
+    font-weight: bolder;
+    font-size: 18px;
+    color: #0d064b;
+    margin-right: 15px;
+    font-family: monospace;
+  }
+  
+  .num {
+    padding-left: 7px;
+    font-size: 18px;
+    color: #2e7d27;
+    font-family: monospace;
+  }
+  
+  #btnwishlist,#btndis,#btndelete,.btnupdate{
+    position: sticky;
+    float: right;
+    height: 13vh;
+    width: 7vh;
+    margin-top : -17%;
+    margin-right: -7vw;
+    margin-left: 2vw;
+    border-radius: 15px;
+    background-color: rgb(218, 218, 218);
+    color: rgb(0, 0, 0);
+  }
+  #btndelete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btnupdate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -18rem;
+    margin-top: -17%; 
+  }
+  .btnupdate:hover{
+    color:white;
+    background-color: #0d064b;
+    }
+  
+  .fa {
+    font-size: 3vmin;
+  }
+  
+  .sl {
+    font-size: 4vmin;
+  }
+  
+  #btnwishlist:hover,#btndelete:hover {
+      background-color: rgb(143, 0, 0);
+      color: rgb(255, 248, 248);
+  }
+  
+  #btndis {
+    /* opacity: 0.8; */
+    background-color: rgb(157, 0, 0);
+    cursor: not-allowed;
+    color: rgb(255, 255, 255);
+  }
+  

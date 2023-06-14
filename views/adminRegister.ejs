@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration Page</title>
+</head>
+<style> 
+ body{
+
+background: linear-gradient(135deg, #00bcd4, #8bc34a);     
+font-family: 'Montserrat', sans-serif;
+}
+.form-heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: #e31b6d;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+form {
+    justify-content:center;
+    align-items: center;
+  max-width: 600px;
+  margin: 9% auto;
+  height: 27.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 22px 20px 20px 20px;
+  border-radius: 5px;
+  
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  width: 100%;
+  padding: 12px 20px;
+  height:38px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(227, 27, 109, 0.2);
+}
+
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+.container {
+  padding: 16px;
+}
+.signIn{
+    padding: 20px 10px;
+    font-size: 18px;
+    font-family: cursive;
+}
+.signIn a{
+    text-decoration: none;
+    color: #e31b6d;
+}
+span.error {
+  color: red;
+}
+
+  </style>
+</style>
+<body>
+    <form action="/adminRegister" method="post">
+      <div class="form-group">
+        <h2 class="form-heading">Admin Registration</h2>
+      </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="signIn">
+        Already Have An Account ?
+        <a href='/adminLogin'">Sign IN</a>
+      </div>
+    </form>
+    <script>
+      var email = document.getElementById("email").value;
+      submit.onclick = validateEmail(email);
+      submit.onclick = validatePassword;
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+      submit.onclick = validateEmail(email);
+
+      function validateEmail(emailField) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false && emailField.value != Null) {
+          alert("Invalid Email Address");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

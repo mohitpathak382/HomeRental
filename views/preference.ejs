@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preferences</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Krub:300,400" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/hrmlogo1.svg">
+    <link rel="stylesheet" href="/search.css" type="text/css">
+</head>
+<body>
+    <div id="header">
+        <img src="/images/hrmlogo.svg" alt="logos" onclick="location.href='/dashboard'" title="home page">
+        <span  id="username"><p style="font-size:2vw;"> Hi, <%= user.username %> </p></span>
+
+    </div>
+    <div id="pContainer">
+      <% for(let i = 0; i < houseDetails.length; i++) { %>
+        <div id="eachContainer">
+          <div class="imgContainer" align="left">
+            <% if (houseDetails[i].filename) { %>
+              <img class="imgFit clickable" src="/uploads/<%= houseDetails[i].filename %>">
+            <% } else { %>
+              <img class="imgFit clickable" src="/images/undefined.jpg" alt="Upload image">
+            <% } %>
+          </div>
+
+          <div id="fInfo" class="userInfo">
+            <a href="<%= houseDetails[i].locality %>">
+              <p class="address">
+                <span id="address"><%= houseDetails[i].address %></span>
+                <span class="bedroom"></span>
+              </p>
+            </a>
+            <p class="house-properties">
+              <span class="cat">Category: </span>
+              <span class="catvalue"><%= houseDetails[i].category %></span>
+              <span class="bed">Bedroom: </span>
+              <span class="bedvalue"><%= houseDetails[i].bhk %> BHK</span>
+              <span class="facing">House Facing: </span>
+              <span class="faceValue"><%= houseDetails[i].facing %></span>
+            </p>
+            <p class="hrent">
+              <span class="oname">Owner: </span>
+              <span class="onamevalue"><%= houseDetails[i].username %></span>
+              <span class="rent">Rental Price: </span>
+              <span class="rValue">Rs <%= houseDetails[i].rent %></span>
+              <i class="fa fa-mobile" id="gIcon"></i>
+              <span class="num"><%= houseDetails[i].mobile %></span>
+            </p>
+            <p class="about">
+              <span class="desc">About: </span>
+              <span class="descvalue"><%= houseDetails[i].about %></span>
+            </p>
+    
+            <% if (user.role === 'admin') { %>
+              <!-- Show delete and modify buttons for admin -->
+              <a id="btndelete" href="/removeHouse/<%= houseDetails[i]._id %>"><i class="fa fa-trash"></i></a>
+
+              <a class="btnupdate" href="/updateHouse/<%= houseDetails[i]._id %>"><i class="fa fa-pencil"></i></a>
+
+            <% } else if (user.role === 'customer') { %>
+              <!-- Show bookmark button for user -->
+              <% if (bookmarks.includes(String(houseDetails[i]._id))) { %>
+                <button name="wishlist" id="btndis" disabled><i class="fa fa-bookmark"></i></button>
+              <% } else { %>
+                <% const formId = houseDetails[i].username + i;  
+                %>
+                <form  method="POST" action="/bookmark/<%= user.id %>/<%= houseDetails[i]._id %>">
+                  <button name="wishlist" id="btnwishlist" type="submit" value="<%= houseDetails[i].address %>" title="Wishlist">
+                    <span><i class="fa fa-bookmark"></i></span>
+                  </button>
+                </form>
+                <script>
+                  document.getElementById('<%= formId %>').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent form submission
+                    // Perform any additional logic or AJAX request if needed
+                  });
+                </script>
+              <% } %>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+    </div>      
+    <div id="home" onclick="location.href='/dashboard'" style="border: 2px solid rgb(201, 0, 0)">
+      <p id="homeTxt">Home</p>
+      <p>
+        <span class="glyphicon glyphicon-home homeIcon"></span>
+      </p>
+    </div>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        var imgContainers = document.querySelectorAll(".imgContainer");
+
+        imgContainers.forEach(function(container) {
+          var img = container.querySelector("img");
+
+          img.addEventListener("click", function() {
+            var expandedImg = window.open("", "_blank", "fullscreen=yes");
+            expandedImg.document.write("<html><head><title>Expanded Image</title></head><body style='margin: 0;'><img src='" + img.src + "' style='width: 100%; height: 100%; object-fit: contain;'></body></html>");
+            expandedImg.document.close();
+          });
+        });
+      });
+
+ // Function to remove the house
+function removeHouse(houseId) {
+  fetch(`/houses/remove/${houseId}`, {
+    method: 'POST'
+  })
+    .then(response => response.text())
+    .then(result => {
+      console.log(result);
+      // Handle success or perform necessary actions
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Handle error or display error message
+    });
+}
+
+// Function to update the house
+function updateHouse(houseId) {
+  // Get the updated house data from the form or other input fields
+
+  const updatedHouseData = {
+    // Add the properties you want to update
+    // For example: address, category, bhk, etc.
+  };
+
+  fetch(`/houses/update/${houseId}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(updatedHouseData)
+  })
+    .then(response => response.text())
+    .then(result => {
+      console.log(result);
+      // Handle success or perform necessary actions
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Handle error or display error message
+    });
+}
+
+
+    </script>
+</body>
+</html>

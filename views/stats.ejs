@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .stats-container {
+            width:30rem;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 40px;
+        }
+
+        p {
+            color: #777;
+            margin: 10px 0;
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+
+        .star-rating {
+            display: inline-block;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="stats-container">
+        <h1>Statistics</h1>
+        
+        <h2>Users</h2>
+        <p><i class="fas fa-user icon"></i>Total Number of Users: <%= userCount %></p>
+        <p>Average User Rating: 
+            <span class="star-rating">
+                <% for (let i = 1; i <= averageRating; i++) { %>
+                    <i class="fas fa-star"></i>
+                <% } %>
+            </span>
+        </p>
+        <h2>Houses</h2>
+        <p><i class="fas fa-home icon"></i>Total Number of Houses: <%= houses %></p>
+        <p><i class="fas fa-building icon"></i>Flats: <%= flatCount %></p>
+        <p><i class="fas fa-home icon"></i>House: <%= houseCount %></p>
+    </div>
+</body>
+</html>

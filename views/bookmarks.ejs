@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortlisted</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Krub:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/old logo.svg">
+    <link rel="Stylesheet" type="text/css" href="/search.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style type="text/css">
+       
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img src="/images/hrmlogo.svg" alt="logos" onclick="location.href='/dashboard' " title="home page" > 
+        <span  id="username"><p style="font-size:2vw;"> Hi, <%= user.username %> </p></span>
+    </div>
+    <div id="pContainer">
+        <% for(let i = 0; i < houses.length; i++) { %>
+          <div id="eachContainer">
+            <div class="imgContainer" align="left">
+              <% if (houses[i].filename) { %>
+                <img class="imgFit clickable" src="/uploads/<%= houses[i].filename %>">
+              <% } else { %>
+                <img class="imgFit clickable" src="/images/undefined.jpg" alt="Upload image">
+              <% } %>
+            </div>
+  
+            <div id="fInfo" class="userInfo">
+              <a href="<%= houses[i].locality %>">
+                <p class="address">
+                  <span id="address"><%= houses[i].address %></span>
+                  <span class="bedroom"></span>
+                </p>
+              </a>
+              <p class="house-properties">
+                <span class="cat">Category: </span>
+                <span class="catvalue"><%= houses[i].category %></span>
+                <span class="bed">Bedroom: </span>
+                <span class="bedvalue"><%= houses[i].bhk %> BHK</span>
+                <span class="facing">House Facing: </span>
+                <span class="faceValue"><%= houses[i].facing %></span>
+              </p>
+              <p class="hrent">
+                <span class="oname">Owner: </span>
+                <span class="onamevalue"><%= houses[i].username %></span>
+                <span class="rent">Rental Price: </span>
+                <span class="rValue">Rs <%= houses[i].rent %></span>
+                <i class="fa fa-mobile" id="gIcon"></i>
+                <span class="num"><%= houses[i].mobile %></span>
+              </p>
+              <p class="about">
+                <span class="desc">About: </span>
+                <span class="descvalue"><%= houses[i].about %></span>
+              </p>
+    
+              <% { %>
+                <% const formId = houses[i].username + i;  
+                %>
+                
+                <form  method="POST" action="/unbookmark/<%= user._id %>/<%= houses[i]._id %>">
+                  <button name="wishlist" id="btndelete" type="submit" value="<%= houses[i].address %>" title="Wishlist">
+                    <span><i class="fa fa-trash"></i></span>
+                  </button>
+                </form>
+                <script>
+                  document.getElementById('<%= formId %>').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent form submission
+                    // Perform any additional logic or AJAX request if needed
+                  });
+                </script>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+      </div>      
+        <div id="home" onclick="location.href='/dashboard'" style="border: 2px solid rgb(201, 0, 0)">
+          <p id="homeTxt">Home</p>
+          <p>
+            <span class="glyphicon glyphicon-home homeIcon"></span>
+          </p>
+        </div>
+    
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+       $("#homeIcon").hide();
+           $("#home").hover(function(){
+                $("#homeTxt").hide();
+                $("#homeIcon").show();
+           },
+              function(){
+              $("#homeTxt").show();
+                $("#homeIcon").hide();
+           });
+        var scroller=document.getElementById("chatSpace");
+        scroller.scrollTop=scroller.scrollHeight;
+    });
+
+   document.addEventListener("DOMContentLoaded", function() {
+  var imgContainers = document.querySelectorAll(".imgContainer");
+
+  imgContainers.forEach(function(container) {
+    var img = container.querySelector("img");
+
+    img.addEventListener("click", function() {
+      var expandedImg = window.open("", "_blank", "fullscreen=yes");
+      expandedImg.document.write("<html><head><title>Expanded Image</title></head><body style='margin: 0;'><img src='" + img.src + "' style='width: 100%; height: 100%; object-fit: contain;'></body></html>");
+      expandedImg.document.close();
+    });
+  });
+});
+
+</script>
+</html>

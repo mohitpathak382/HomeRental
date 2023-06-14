@@ -1,0 +1,267 @@
+
+html, body {
+    height: 80%;
+    margin: 0;
+    padding:0;
+  }
+  body{
+    background-image: url(../images/retro-living-room-interior-design.jpg );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #023d6086;
+    padding: 2px 5px;
+  }
+  .header .header-nav {
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .header-nav .hrmlogo {
+    margin-left: 8px;
+    width: 100px;
+    height: 65px;
+    background-color:#F8F0E3;
+    border: #000000 2px solid ;
+    border-radius:4px;
+  }
+  
+  .header-nav .hrmlogo:hover {
+    background-color: #343a40;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 1px #212529;
+  }
+  
+  .nav-items {
+    width: 60%;
+    margin-left: 35%;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5px;
+    padding-left: 0px;
+    align-content: center;
+  }
+  
+  .nav-items ul {
+    overflow: hidden;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 2px 0px 5px;
+    font-size: 23px;
+  }
+  
+  a.nav-links{
+    color: #f8f9fa;
+    padding: 0px 5px, 10px, 15px;
+    margin: 2px;
+    text-decoration: none;
+  }
+  
+  a.nav-links.active {
+    text-decoration: underline;
+    margin-left: 25px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 10px;
+    padding-left: 5px;
+    color: #f8f9fa;
+  }
+  
+  .nav-links:not(.active):hover,
+  .dropdown span:hover {
+    color: #25e4da;
+  }
+  
+  .nav-links {
+    display: inline-block;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover{
+    color: #5b6476;
+  }
+  
+  .nav-links{
+    display: inline-block;
+  }
+     .custom-color{
+         position:absolute;
+         left:25%;
+         top:20%;
+         font-size:3.2vmin;
+         justify-content:center;
+     }
+     #preferenceForm {
+        position: absolute;
+        margin-left: 37vw;
+        margin-top: -13vh; /* Adjust the margin-top value to create space between preferenceForm and profile */
+        width: 48.5vw;
+        height: 15vh;
+        background: linear-gradient(to right bottom, #ffcece00, #f4fbff00);
+        opacity: 1;
+        border-radius: 10px;
+      }
+      
+     #pform{
+         position: absolute;
+         top:50%;
+         left:3%;
+         font-size:2.4vmin;
+     }
+     #pform > input{
+         border: none;
+         border-radius:1vmin ;
+     }
+     #title{
+         position:absolute;
+         font-size:2.4vmin;
+         color:#ffffff;/*#050505;*/
+         font-weight:800;
+         top:16%;
+         width:100%;
+         /* background-color:rgb(155, 142, 159); */
+     }
+     #title1{
+         position: absolute;
+         left:3.3%;
+     }
+     #title2{
+         position: absolute;
+         left:34%;
+
+     }
+     #title3{
+         position: absolute;
+         left:66%;
+     }
+     #formbutton {
+        text-align: center;
+        margin-left: 17vw;
+        margin-top: 8%;
+      }
+      
+      #formbutton .btn {
+        background-color: #023d60;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      #formbutton .btn:hover {
+        background-color: #0378a600;
+      }
+      
+ 
+     
+     #profile {
+        background:transparent;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        justify-content: start;
+        border-radius: 10px;
+        margin: 100px auto; /* Added margin and set auto to horizontally center the profile section */
+        width: 40%; /* Added width to control the size of the profile section */
+      }
+      #userName {
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      
+      #userName span {
+        color: #ffcc00;
+      }
+      
+      #msg {
+        font-size: 18px;
+        font-style: italic;
+      }
+
+     .logoutbtn{
+         font-size:3vmin;
+     }
+     p{
+         font-family: 'Krub', sans-serif;
+     }
+     #dashboardIcons{
+         font-size: 4.8vmin;
+         position: absolute;
+         margin-top: 100%;
+         margin-left: 15%;
+         padding: 1vmin;
+         color: rgb(255, 255, 255);
+         float: left;
+     }
+     i{
+         font-size:4.8vmin;
+         padding: 1vmin;
+         transition: transform .3s;
+     }
+     i:hover{
+         cursor: pointer;
+         transform: scale(2);
+     }
+     .temp{
+         position:relative;
+         border-radius: 1vmin solid grey;
+     }
+     .temp button{
+         background-color: transparent;
+         border:none;
+     }
+
+     #shortlistIcon{
+         position: absolute;
+         left:3vmin;
+         top:7vmin;
+         color: black;
+
+     }
+ 
+     #shortlistIcon:hover
+     {
+         color:white;
+     }
+     *:focus{
+         outline: none;
+     }
+     /*   */
+     #feedback{
+         position:absolute;
+         z-index:999;
+         font-size:3.5vmin;
+         margin-left:62.4vw;
+         margin-top:-38vh;
+         color:#000000;
+         cursor: pointer;
+         display: block;            
+     }
+     .feedbackBtn{
+         border: none;
+         padding: 0px;
+         width:4vmin;
+         height:4vmin;
+         margin:1vmin;
+         margin: top -500px; 
+         border-radius:50%;
+         color: #ffffff; 
+         background-color:#000080;
+     }

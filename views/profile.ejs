@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+  body{
+    background-image: url("https://www.desktopbackground.org/p/2014/08/19/811520_google-profiles_10667x6000_h.png" );
+    background-size: 100%;
+    margin-top: 39%;
+    /* height: 100%; */
+    background-position: center;
+    /* background-repeat: no-repeat; */
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #267fb3;
+    padding: 2px 2px;
+  }
+  .header .header-nav {
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .nav-items {
+    width: 60%;
+    margin-left: 48%;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 0px;
+}
+
+.nav-items ul {
+    overflow: hidden;
+    display: flex;
+    list-style-type: none;
+    justify-content: end  ;
+    align-items: center;
+    padding: 7px 2px 0px 5px;
+    font-size: 23px;
+  }
+  
+  a.nav-links{
+      font-size: 23px;
+      color: #f8f9fa;
+    padding: 0px 5px, 10px, 15px;
+    margin: 2px;
+    text-decoration: none;
+  }
+  
+  a.nav-links.active {
+    text-decoration: underline;
+    margin-left: 25px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 10px;
+    padding-left: 5px;
+    color: #f8f9fa;
+  }
+  
+  .nav-links:not(.active):hover,
+  .dropdown span:hover {
+    color: #25e4da;
+  }
+  
+  .nav-links {
+    display: inline-block;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover{
+    color: #5b6476;
+
+  }     
+  .user-data {
+            font-size: 20px;
+            /* padding-left: 8px; */
+            position: absolute;
+            background-color: #ffffffbc;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            height: 290px;
+            margin: 0 500px;
+            margin-top: -30%;
+            /* padding-top: 51px; */
+        }
+        p {
+            margin-bottom: 10px;
+            color: #000000;
+            font-size: 22px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #004fce;
+            padding-right: 15px;
+        }
+        .fa-star{
+            color: #ffbf00;
+        }
+        .fa-home{
+            color:blue
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="header-nav">
+         <img src="../images/hrmlogo.svg" alt="ApnaGhar" class="hrmlogo" >
+            <div class="nav-items">
+                <ul>
+                    <li><a class="nav-links " href="/dashboard">Home</a></li>
+                    <li><a class="nav-links" href="/house-register">Add House</a></li>
+                    <li><a class="nav-links rating" href="#feedback">Rate Us</a></li>
+                    <li><a class="nav-links" href="/bookmarked">Bookmarks</a></li>
+                    <li><a class="nav-links active" href="#hero">Profile</a></li>
+                    <li><a class="nav-links" href="/logout" >Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="user-data"
+        <p><label>Username:</label> <%= user.username %></p> 
+        <p><label>Email:</label> <%= user.email %></p>
+        <p><label>Contact:</label> <%= user.contact %></p>
+        <p><label>Gender:</label> <%= user.gender %></p>
+        <p><label>Houses Bookmarked:</label> <% for(let i=0;i<user.bookmarks.length;i++){ %>
+            <i class="fa fa-home" aria-hidden="true" ></i>
+            <% } %> </i></p>
+        <p><label>Address:</label> <%= user.address %></p>
+        <p><label>Feedback  :</label> <% for(let i=0;i<user.feedback;i++){ %>
+            <i class="fa fa-star" aria-hidden="true" ></i>
+            <% } %> </i></p>
+    </div>
+</body>
+</html>

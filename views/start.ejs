@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="../images/old logo.svg">
+    <link rel="Stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header-nav">
+         <img src="../images/hrmlogo.svg" alt="ApnaGhar" class="hrmlogo" onclick="location.href='/' ">
+            <div class="nav-items">
+                <ul>
+                    <li><a class="nav-links active" href="#hero">Home</a></li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0)" class="dropbtn"><span>Register</span></a>
+                      <div class="dropdown-content">
+                          <a href="/register">Customer</a>
+                          <a href="/adminRegister">Admin</a>
+                      </div>
+                  </li>
+                  <li class="dropdown">
+                      <a href="javascript:void(0)" class="dropbtn"><span>Login</span></a>
+                      <div class="dropdown-content">
+                          <a href="/customerLogin">Customer</a>
+                          <a href="/adminLogin">Admin</a>
+                      </div>
+                  </li>
+                    <li><a class="nav-links" href="#about" class="smooth-scroll">About</a></li>
+                    <li><a class="nav-links" href="#contact" class="smooth-scroll">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="tag">
+        <p class="message">Properties for rent In <span>Indore</span></p>
+        <p class="quote"> Parr...Se Perfect</p>
+    </div>
+    </div>
+
+    <section class="sec1">
+        <div class="quotes1">
+            <p class="p1">'We at ApnaGhar helps you Provide a perfect house'</p>
+            <p class="p2">'Home is the Place where the heart’s tears can dry at their own Pace'</p>
+            <p class="p3">'Home is the Place where the heart can laugh without shyness'</p>
+        </div>
+    </section>
+    <section class="stories">
+        <p class="tagline">
+                We Have Witenessed Millians Of Happy Stories
+        </p>
+
+        <div class="story1">
+            <img src="../images/family-1.jpg" alt="Family Pic" class="storyimg">
+            <p class="name">Sharma Family</p>
+            <p class="desc">"We Were looking for a home,We started searching in Offline as well as online mode. Then we
+                come accros <span>APNAGHAR.COM</span>,They helped us choosing our home which is perpect for our family"</p>
+        </div>
+        <div class="story2">
+            <img src="../images/family-2.jpg" alt="Kushwaha Family Pic" class="storyimg">
+            <p class="name">Kushwaha Family</p>
+            <p class="desc">We Recently shifted to Indore from Pune, We were having trouble finding a house for ourself we started searching online we went through Many resources but At Last we Found our House from <span>APNAGHAR.COM</span> </p>
+        </div>
+        <div class="story3">
+            <img src="../images/family-3.jpg"  alt = "Yadav Family" class="storyimg">
+            <p class="name">Yadav Family</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci facere fugiat corrupti amet harum mollitia non, animi eaque? Ducimus, iste, voluptates ullam rem accusantium repudiandae officiis saepe odit .</p>
+        </div>
+    </section>
+    <button class="scrollToTop" id="scrollToTopBtn"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></button>
+
+    <footer class="footer">
+        <div class="divider">
+           <div id="about">
+            <p id="aboutus">About Us</p>
+            <p id="AboutMsg">ApnaGhar is India's online Property marketplace to rent residential properties. Adjudged as the most preferred real estate portal in India by
+                various independent surveys.</p>
+             <p id="copyrights">&copy; Copyright 05.04.2022 , All Rights Reserved .</p>
+             <p id="version">Version 1.0</p>
+           </div>
+           <div id="feedback">
+            <p id="FeedbackHead">Feedback</p>
+            <p id="mailTxt">MAIL us at</p>
+            <p id="gmail">
+               <span><i class="fa fa-google-plus gmail"></i></span><span> ApnaGhar0504@gmail.com</span>
+            </p>
+            <p id="contact">Connect Us Through</p>
+            <p></p>
+            <p id="yIcon"><button onclick="window.location.href='https://www.youtube.com/channel/UCAyLY9OzOOPMd1_Mm9gayOg'"><i class="fa fa-youtube yout" ></i></button></p>
+            <p id="iIcon"><button onclick="window.location.href='https://www.instagram.com/instagram/'"><i
+                     class="fa fa-instagram insta"></i> </button></p>
+            <p id="lIcon"><button onclick="window.location.href='https://linkedin.com/in/mohit-pathak-883178194'"><i class="fa fa-linkedin linkd"></i></button></p>
+            <p id="gIcon"><button onclick="window.location.href='https://github.com/mohitpathak382'"><i class="fa fa-github git"></i></button></p>
+            <p id="tIcon"><button onclick="window.location.href='https://twitter.com/mpathak382'"><i class="fa fa-twitter twit"></i></button></p>
+         </div>
+      </div>
+        </div>
+    </footer>
+
+<script type="text/javascript">
+   
+var scrollButton = document.querySelector('.scrollToTop');
+
+scrollButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  var scrollStep = scrollTop / 20;
+  scrollToTop();
+
+  function scrollToTop() {
+    if (scrollTop > 0) {
+      scrollTop -= scrollStep;
+      document.documentElement.scrollTop = scrollTop;
+      document.body.scrollTop = scrollTop;
+      requestAnimationFrame(scrollToTop);
+    }
+  }
+});
+
+window.addEventListener('scroll', function () {
+  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  if (scrollTop > 300) {
+    scrollButton.style.display = 'block';
+  } else {
+    scrollButton.style.display = 'none';
+  }
+});
+
+var smoothScrollLinks = document.getElementsByClassName('smooth-scroll');
+
+for (var i = 0; i < smoothScrollLinks.length; i++) {
+  smoothScrollLinks[i].addEventListener('click', function (e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    var offsetTop = target.offsetTop;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth'
+    });
+  });
+}
+
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/631a4d6054f06e12d893953c/1gcfbshqu';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    </script>
+    
+</body>
+
+</html>

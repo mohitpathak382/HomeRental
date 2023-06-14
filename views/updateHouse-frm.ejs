@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update House Form</title>
+    <link rel="stylesheet" type="text/css" href="/houseRegister.css">
+    <link rel="stylesheet" type="text/css" href="/login.css">
+
+</head>
+<body>
+
+    <navbar>
+        <nav class="navbar-nav">
+         <img src="../images/hrmlogo.svg" alt="ApnaGhar" class="hrmlogo" onclick="location.href='/' ">
+            <div class="nav-items">
+                <ul>
+                    <li><a class="nav-links" href="/dashboard">Home</a></li>
+                    <li><a class="nav-links active" href="#hero"">Update House</a></li>
+                    <li><a class="nav-links" href="/logout">Logout</a></li>
+                </ul>
+            </div>  
+        </nav>
+    </navbar>
+    <div class ="bgImg">
+        <img src="https://img.freepik.com/free-photo/small-house-model-pen-blank-clipboard-blue-backdrop_23-2148203965.jpg?w=1060&t=st=1685969552~exp=1685970152~hmac=68844e38c80eefa3c3ddc9ca3d235aea0b090a381b6c738c8e5e2c01e6366e1b" alt="">
+      <div id="home" onclick="location.href='/dashboard' ">
+        <i class="fa fa-home" aria-hidden="true" color="white"></i>
+    </div>
+    <div id="House-register">
+  <form id="Form" action="/house-register" method="POST" enctype="multipart/form-data">
+    <h3 style="color:green;">Please fill your details here</h3>
+        <label for="username">Owner Name:</label>
+        <input type="text" id="username" name="username" placeholder="Owner Name" value="<%=house.username %>">
+
+        <label for="mob">Mobile Number:</label>
+        <input type="text" id="mob" name="mobile" maxlength="10" pattern="[0-9]{10}" placeholder="Mobile Number" value="<%=house.mobile %>">
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" placeholder="Address" value="<%=house.address %>">
+
+        <div id="radio">
+            <label for="category">Category:</label>
+            <span id="houseRadio">
+                <input type="radio" name="category" id="category" value="House">
+                <b id="radiotxt">House</b>
+            </span>
+            <span id="flatRadio">
+                <input type="radio" name="category" id="category" value="Flat">
+                <b id="radiotxt">Flat</b><br>
+            </span>
+        </div>
+        <div class="form-row">
+            <label for="bedroom">BHK:</label>
+            <input type="number" id="bedroom" name="BHK" placeholder="BHK" value="<%=house.bhk %>">
+
+            <label for="rent">Rent:</label>
+            <input type="number" id="rent" name="rent" placeholder="Rent" value="<%=house.rent %>">
+        </div>
+        <label for="description">House Description:</label>
+        <textarea rows="4" cols="30" name="description" placeholder="House Description"><%=house.about %></textarea>
+
+        <div class="form-row">
+            <label for="facing">Facing:</label>
+            <input type="text" name="facing" placeholder="Facing" value="<%=house.facing %>">
+
+            <label for="locality">Locality:</label>
+            <input type="text" list="localities" name="locality" placeholder="Locality" value="<%=house.locality %>">
+            <datalist id="localities">
+                <option value="Vijay Nagar">
+                <option value="Sudama Nagar">
+                <option value="Palasia">
+                <option value="Geeta Bhawan">
+                <option value="Rajwada">
+                <option value="Sapna Sangita">
+            </datalist>
+        </div>
+        <p><%= (typeof alertMsg !== 'undefined') ? alertMsg : '' %></p>
+
+        <label for="image">Images:</label>
+        <input type="file" name="image" multiple value="<%=house.filename %>"><br>
+        <button type="submit">Update House</button>
+    </form>
+    </div>
+</body>
+</html>

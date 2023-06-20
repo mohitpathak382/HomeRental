@@ -1,6 +1,6 @@
  # Home Rental Project
 
-<img src="./Public/images/hrmlogo.svg" alt="Project Logo" width="200" height="200">
+<img src="./Public/images/hrmlogo.svg" alt="Project Logo" width="200" height="200" style="background-color:white">
 
 
 

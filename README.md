@@ -1,8 +1,8 @@
  # Home Rental Project
 
-<img src="./Public/images/hrmlogo.svg" alt="Project Logo" width="200" height="200" style="background-color:'white'">
-
-
+<div style="background-color: white;">
+    <img src="./Public/images/hrmlogo.svg" alt="Project Logo" width="200" height="200">
+</div>
 
 Welcome to the **Home Rental Project**! This project is a web application that allows users to search and rent homes. It includes features for user registration, login, house search, bookmarking, and more.
 

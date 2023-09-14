@@ -46,7 +46,7 @@ npm start
 
 - Node.js
 - Express.js
-- MongoDB
+- MySQL
 - EJS (Embedded JavaScript)
 - CSS
 
